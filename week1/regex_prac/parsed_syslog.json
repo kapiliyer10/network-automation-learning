@@ -1,0 +1,38 @@
+[
+    {
+        "timestamp": "Jan 15 10:23:01",
+        "device": "R1",
+        "interface": "GigabitEthernet0/0",
+        "state": "down"
+    },
+    {
+        "timestamp": "Jan 15 10:23:45",
+        "device": "R2",
+        "interface": "GigabitEthernet0/1",
+        "state": "up"
+    },
+    {
+        "timestamp": "Jan 15 10:25:12",
+        "device": "R1",
+        "interface": "GigabitEthernet0/0",
+        "state": null
+    },
+    {
+        "timestamp": "Jan 15 10:26:33",
+        "device": "R3",
+        "interface": "GigabitEthernet1/0",
+        "state": "down"
+    },
+    {
+        "timestamp": "Jan 15 10:28:01",
+        "device": "R2",
+        "interface": null,
+        "state": null
+    },
+    {
+        "timestamp": "Jan 15 10:29:15",
+        "device": "R4",
+        "interface": "GigabitEthernet0/0",
+        "state": "up"
+    }
+]

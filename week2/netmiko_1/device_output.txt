@@ -1,0 +1,203 @@
+===== show version =====
+ 
+Sat May  2 21:06:03.830 UTC
+Cisco IOS XR Software, Version 25.3.1 LNT
+Copyright (c) 2013-2025 by Cisco Systems, Inc.
+
+Build Information:
+ Built By     : cisco
+ Built On     : Wed Sep 10 14:59:44 UTC 2025
+ Build Host   : iox-lnx-034
+ Workspace    : /auto/srcarchive12/prod/25.3.1/xrd-control-plane/ws/
+ Version      : 25.3.1
+ Label        : 25.3.1
+
+cisco XRd Control Plane
+cisco XRd-CP-C-01 processor with 24GB of memory
+xr-router-01 uptime is 1 week, 3 days, 3 hours, 57 minutes
+XRd Control Plane Container
+
+
+===== show ip interface brief =====
+ 
+Sat May  2 21:06:04.263 UTC
+
+Interface                      IP-Address      Status          Protocol Vrf-Name
+Loopback10                     10.10.10.1      Up              Up       default 
+Loopback123                    10.123.123.1    Up              Up       default 
+MgmtEth0/RP0/CPU0/0            10.10.20.101    Up              Up       default 
+GigabitEthernet0/0/0/0         192.168.1.10    Up              Up       default 
+GigabitEthernet0/0/0/1         192.168.1.14    Up              Up       default 
+
+===== show running-config =====
+ 
+Sat May  2 21:06:04.708 UTC
+!! Building configuration...
+!! IOS XR Configuration 25.3.1
+!! Last configuration change at Sat May  2 20:41:09 2026 by kapil.iyer10
+!
+hostname xr-router-01
+logging monitor debugging
+tacacs-server host 10.17.248.43 port 49
+ key 7 02245C532B1027284D4050495716180F
+!
+username xrdbuild
+ group root-lr
+ group cisco-support
+ secret 10 $6$Z8YzE6HZEWoPuD6M$w0XuwhdGkvWpfba6pJn7A9TQp3WQgRwTTilctIZvwfZbSzbJp7jpPC55QlMTSVO22vIFQ55agsP7cnv.2OB7a1
+!
+aaa authorization exec default group tacacs+ local
+aaa authorization exec console_author local
+aaa authorization commands default group tacacs+ local
+aaa authorization commands console_author local
+aaa authentication login default group tacacs+ local
+aaa authentication login console_authen local
+cdp advertise v1
+grpc
+ port 57777
+ no-tls
+ address-family ipv4
+!
+line console
+ authorization exec console_author
+ authorization commands console_author
+ login authentication console_authen
+!
+line default
+ authorization exec default
+ authorization commands default
+ login authentication default
+ transport input ssh
+!
+vty-pool default 0 99 line-template default
+netconf-yang agent
+ ssh
+!
+interface Loopback10
+ ipv4 address 10.10.10.1 255.255.255.255
+!
+interface Loopback123
+ description CITNC_ANSIBLE_DEMO
+ ipv4 address 10.123.123.1 255.255.255.255
+!
+interface MgmtEth0/RP0/CPU0/0
+ ipv4 address 10.10.20.101 255.255.255.0
+ lldp
+ !
+!
+interface GigabitEthernet0/0/0/0
+ description Link to PE2
+ ipv4 address 192.168.1.10 255.255.255.252
+ lldp
+ !
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 192.168.1.14 255.255.255.252
+ lldp
+ !
+!
+prefix-set test
+  10.10.20.128/28,
+  10.10.20.144/28,
+  10.10.20.192/28,
+  10.10.20.160/28
+end-set
+!
+prefix-set PS-PEER-INET-GOOGLE1-V4-OUT-MATCH-30
+  10.10.3.0/24,
+  10.10.4.0/24
+end-set
+!
+community-set CS-STRIP-AS5400
+  5400:*
+end-set
+!
+route-policy ALLOW-ALL
+end-policy
+!
+route-policy RPL-PEER-INET-GOOGLE1-V4-OUT
+  if destination in PS-PEER-INET-GOOGLE1-V4-OUT-MATCH-30 then
+    prepend as-path 5400 3
+    delete community in CS-STRIP-AS5400
+    pass
+  endif
+  drop
+end-policy
+!
+router static
+ address-family ipv4 unicast
+  0.0.0.0/0 MgmtEth0/RP0/CPU0/0 10.10.20.254
+ !
+ vrf SAMPLE
+  address-family ipv4 unicast
+   58.66.94.94/32 10.10.10.10 track SAMPLE
+  !
+ !
+ vrf INTERNET
+  address-family ipv4 unicast
+   58.69.66.93/32 121.54.55.243 track SAMPLE
+  !
+ !
+!
+router isis 1
+ is-type level-2-only
+ net 49.0001.0010.0010.0010.00
+ address-family ipv4 unicast
+  metric-style wide
+  segment-routing mpls
+ !
+ interface GigabitEthernet0/0/0/0
+  circuit-type level-2-only
+  address-family ipv4 unicast
+  !
+ !
+ interface GigabitEthernet0/0/0/1
+  circuit-type level-2-only
+  address-family ipv4 unicast
+  !
+ !
+!
+router ospf 1
+ area 0
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+ !
+ area 10
+  interface Loopback10
+  !
+ !
+!
+router bgp 1
+ bgp router-id 1.1.1.1
+ bgp update-delay 0
+ address-family ipv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 1
+  address-family ipv4 unicast
+  !
+ !
+!
+xml agent tty
+ iteration off
+!
+netconf agent tty
+!
+lldp
+!
+track SAMPLE
+ type route reachability
+  route 58.69.66.93/32
+ !
+!
+track TRACK3
+ type rtr 3 reachability
+!
+ssh server v2
+ssh server vrf default
+ssh server netconf vrf default
+end
+
+

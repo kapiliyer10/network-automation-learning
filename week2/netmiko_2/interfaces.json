@@ -1,0 +1,32 @@
+[
+    {
+        "interface": "Loopback10",
+        "ip": "10.10.10.1",
+        "status": "Up",
+        "protocol": "Up"
+    },
+    {
+        "interface": "Loopback123",
+        "ip": "10.123.123.1",
+        "status": "Up",
+        "protocol": "Up"
+    },
+    {
+        "interface": "MgmtEth0/RP0/CPU0/0",
+        "ip": "10.10.20.101",
+        "status": "Up",
+        "protocol": "Up"
+    },
+    {
+        "interface": "GigabitEthernet0/0/0/0",
+        "ip": "192.168.1.10",
+        "status": "Up",
+        "protocol": "Up"
+    },
+    {
+        "interface": "GigabitEthernet0/0/0/1",
+        "ip": "192.168.1.14",
+        "status": "Up",
+        "protocol": "Up"
+    }
+]

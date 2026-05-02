@@ -1,0 +1,7 @@
+[
+    {"hostname": "R1", "ip": "192.168.1.1", "platform": "cisco_ios", "status": "up"},
+    {"hostname": "R2", "ip": "192.168.1.2", "platform": "cisco_ios", "status": "down"},
+    {"hostname": "R3", "ip": "10.0.0.1",    "platform": "arista_eos", "status": "up"},
+    {"hostname": "R4", "ip": "10.0.0.2",    "platform": "arista_eos", "status": "down"},
+    {"hostname": "R5", "ip": "999.0.0.1",   "platform": "juniper",    "status": "up"}
+]

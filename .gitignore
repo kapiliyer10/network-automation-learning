@@ -1,0 +1,4 @@
+.env
+devices.yaml
+__pycache__/
+*.pyc
