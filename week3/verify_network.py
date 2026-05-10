@@ -1,8 +1,17 @@
 import subprocess
 
-def run_command(container,command):
+def get_containers(lab_name):
     result = subprocess.run(
-        ["docker", "exec", container,"vtysh", "-c", command],
+        ["docker", "ps", "--filter", f"label=containerlab={lab_name}",
+         "--format", "{{.Names}}"],
+        capture_output=True,
+        text=True
+    )
+    return result.stdout.strip().splitlines()
+
+def run_command(container, command):
+    result = subprocess.run(
+        ["docker", "exec", container, "vtysh", "-c", command],
         capture_output=True,
         text=True
     )
@@ -11,8 +20,9 @@ def run_command(container,command):
     else:
         print(result.stdout)
 
-containers = ["clab-bgp-lab-router1", "clab-bgp-lab-router2"]
+containers = get_containers("bgp-lab")
 commands = ["show bgp summary", "show ip route bgp", "show interface brief"]
+
 for container in containers:
     for command in commands:
         print(f"===== {container} | {command} =====")
