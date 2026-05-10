@@ -1,0 +1,14 @@
+name: bgp-lab
+
+topology:
+  nodes:
+    router1:
+      kind: linux
+      image: frrouting/frr:latest
+
+    router2:
+      kind: linux
+      image: frrouting/frr:latest
+
+  links:
+    - endpoints: ["router1:eth1", "router2:eth1"]
