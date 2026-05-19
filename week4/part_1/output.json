@@ -1,0 +1,322 @@
+{
+  "rpc-reply": {
+    "@message-id": "urn:uuid:507c5611-f666-4bd4-a43e-a87e011489ba",
+    "@xmlns:nc": "urn:ietf:params:xml:ns:netconf:base:1.0",
+    "@xmlns": "urn:ietf:params:xml:ns:netconf:base:1.0",
+    "data": {
+      "interface-configurations": {
+        "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg",
+        "interface-configuration": [
+          {
+            "active": "act",
+            "interface-name": "Loopback0",
+            "interface-virtual": null,
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "1.1.1.1",
+                  "netmask": "255.255.255.255"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback2",
+            "interface-virtual": null,
+            "description": "Configured with Netmiko",
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "2.2.2.2",
+                  "netmask": "255.255.255.255"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback10",
+            "interface-virtual": null,
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "10.10.10.1",
+                  "netmask": "255.255.255.255"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback11",
+            "interface-virtual": null,
+            "description": "Updated by Python",
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "11.11.11.11",
+                  "netmask": "255.255.255.255"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback12",
+            "interface-virtual": null,
+            "description": "Configured by pyATS",
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "1.10.10.12",
+                  "netmask": "255.255.255.255"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback99",
+            "interface-virtual": null,
+            "description": "configured by ansible",
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "99.99.99.99",
+                  "netmask": "255.255.255.255"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback100",
+            "interface-virtual": null,
+            "vrf": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-infra-rsi-cfg",
+              "#text": "PROD"
+            },
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "10.1.0.1",
+                  "netmask": "255.255.255.255"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback101",
+            "interface-virtual": null,
+            "vrf": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-infra-rsi-cfg",
+              "#text": "PROD"
+            },
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "10.1.0.2",
+                  "netmask": "255.255.255.255"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback102",
+            "interface-virtual": null,
+            "vrf": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-infra-rsi-cfg",
+              "#text": "PROD"
+            },
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "10.1.1.1",
+                  "netmask": "255.255.255.0"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback123",
+            "interface-virtual": null,
+            "description": "Updated via NETCONF!",
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "10.10.10.123",
+                  "netmask": "255.255.255.255"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback199",
+            "interface-virtual": null,
+            "description": "Provisioned by B2B order PO-ENT-2026-00482"
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback200",
+            "interface-virtual": null,
+            "vrf": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-infra-rsi-cfg",
+              "#text": "CORP"
+            },
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "172.16.0.1",
+                  "netmask": "255.255.255.255"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback201",
+            "interface-virtual": null,
+            "vrf": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-infra-rsi-cfg",
+              "#text": "CORP"
+            },
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "172.16.1.1",
+                  "netmask": "255.255.255.255"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback300",
+            "interface-virtual": null,
+            "vrf": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-infra-rsi-cfg",
+              "#text": "MGMT"
+            },
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "192.168.100.1",
+                  "netmask": "255.255.255.255"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback301",
+            "interface-virtual": null,
+            "vrf": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-infra-rsi-cfg",
+              "#text": "MGMT"
+            },
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "192.168.100.2",
+                  "netmask": "255.255.255.255"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Loopback999",
+            "interface-virtual": null,
+            "description": "DEMO-NETCONF-CHANGE"
+          },
+          {
+            "active": "act",
+            "interface-name": "Bundle-Ether11212",
+            "interface-virtual": null,
+            "description": "CUST-PORT: Customer1 - OrderId1 - ServiceId1 - 100G - Site1",
+            "mtus": {
+              "mtu": {
+                "owner": "etherbundle",
+                "mtu": "9216"
+              }
+            },
+            "bundle": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-bundlemgr-cfg",
+              "minimum-active": {
+                "links": "1"
+              }
+            },
+            "statistics": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-infra-statsd-cfg",
+              "load-interval": "30"
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "Bundle-Ether12345",
+            "interface-virtual": null,
+            "description": "CUST-PORT: customer_1 - order_id_1 - service_id_1 - 100G - site_1",
+            "mtus": {
+              "mtu": {
+                "owner": "etherbundle",
+                "mtu": "9216"
+              }
+            },
+            "bundle": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-bundlemgr-cfg",
+              "minimum-active": {
+                "links": "1"
+              }
+            },
+            "statistics": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-infra-statsd-cfg",
+              "load-interval": "30"
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "MgmtEth0/RP0/CPU0/0",
+            "ipv4-network": {
+              "@xmlns": "http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg",
+              "addresses": {
+                "primary": {
+                  "address": "10.10.20.101",
+                  "netmask": "255.255.255.0"
+                }
+              }
+            }
+          },
+          {
+            "active": "act",
+            "interface-name": "GigabitEthernet0/0/0/0",
+            "description": "Uplink to Spine-01"
+          },
+          {
+            "active": "act",
+            "interface-name": "GigabitEthernet0/0/0/1",
+            "description": "Uplink to Spine-02"
+          }
+        ]
+      }
+    }
+  }
+}

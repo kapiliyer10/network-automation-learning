@@ -1,0 +1,21 @@
+def build_loopback_payload(name, ip, description):
+    return f"""
+<config>
+  <interface-configurations xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ifmgr-cfg">
+    <interface-configuration>
+      <active>act</active>
+      <interface-name>{name}</interface-name>
+      <description>{description}</description>
+      <interface-virtual/>
+      <ipv4-network xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ipv4-io-cfg">
+        <addresses>
+          <primary>
+            <address>{ip}</address>
+            <netmask>255.255.255.255</netmask>
+          </primary>
+        </addresses>
+      </ipv4-network>
+    </interface-configuration>
+  </interface-configurations>
+</config>
+"""
