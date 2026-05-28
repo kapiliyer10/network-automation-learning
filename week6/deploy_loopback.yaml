@@ -1,0 +1,24 @@
+---
+- name: Deploy loopback interface
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Create loopback interface
+      command: ip link add {{ loopback_name }} type dummy
+      ignore_errors: true # ignore if already exists
+
+    - name: Bring interface up
+      command: ip link set {{ loopback_name }} up
+
+    - name: Assign IP address
+      command: ip addr add {{ loopback_ip }}/32 dev {{ loopback_name }}
+      ignore_errors: true # ignore if already assigned
+
+    - name: Verify loopback was created
+      command: ip addr show {{ loopback_name }}
+      register: verify_output
+
+    - name: Print verification
+      debug:
+        msg: "{{ verify_output.stdout_lines }}"

@@ -1,0 +1,29 @@
+---
+- name: Get router information
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Get hostname
+      command: hostname
+      register: hostname_output
+
+    - name: Get interface info
+      command: ip addr show
+      register: interface_output
+
+    - name: Get BGP status
+      command: vtysh -c "show bgp summary"
+      register: bgp_output
+
+    - name: Print hostname
+      debug:
+        msg: "Hostname: {{ hostname_output.stdout }}"
+
+    - name: Print interfaces
+      debug:
+        msg: "{{ interface_output.stdout_lines }}"
+
+    - name: Print BGP status
+      debug:
+        msg: "{{ bgp_output.stdout_lines }}"

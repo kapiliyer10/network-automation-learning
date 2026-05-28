@@ -1,0 +1,2 @@
+loopback_mask: 255.255.255.255
+loopback_desc: Configured by Ansible
