@@ -1,0 +1,5 @@
+frr_routers:
+  username: root
+  password: ansible
+  port: 22
+  platform: linux

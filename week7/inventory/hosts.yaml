@@ -1,0 +1,9 @@
+router1:
+  hostname: 172.20.20.2
+  groups:
+    - frr_routers
+
+router2:
+  hostname: 172.20.20.3
+  groups:
+    - frr_routers
