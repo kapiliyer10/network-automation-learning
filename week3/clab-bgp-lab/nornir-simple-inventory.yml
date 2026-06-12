@@ -3,9 +3,9 @@ router1:
     username: 
     password: 
     platform: linux
-    hostname: 172.20.20.3
+    hostname: 172.20.20.2
 router2:
     username: 
     password: 
     platform: linux
-    hostname: 172.20.20.2
+    hostname: 172.20.20.3

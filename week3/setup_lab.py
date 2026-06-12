@@ -6,6 +6,16 @@ LAB_FILE = "/home/owner/practice/week3/bgp-lab.yaml"
 LAB_DIR  = "/home/owner/practice/week3"
 INVENTORY_FILE = "/home/owner/practice/week3/inventory.yaml"
 
+def setup_ssh(containers):
+    print("Setting up SSH on containers...")
+    for container in containers:
+        subprocess.run(["sudo", "docker", "exec", container, "bash", "-c",
+            "apk add openssh && mkdir -p /run/sshd && echo 'root:ansible' | chpasswd && "
+            "ssh-keygen -A && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config && "
+            "echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config && "
+            "/usr/sbin/sshd"], capture_output=True)
+        print(f"[OK] SSH setup on {container}")
+
 def deploy_lab():
     print("Deploying lab...")
     subprocess.run(["sudo", "containerlab", "deploy", "-t", LAB_FILE], 
@@ -76,7 +86,7 @@ def main():
         node_name = container.split("-")[-1]
         cfg = inventory[node_name]
         configure_router(container, cfg)
-
+    setup_ssh(containers)   
     time.sleep(5)
     for container in containers:
         verify_bgp(container)

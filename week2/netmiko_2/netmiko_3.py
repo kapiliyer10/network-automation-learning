@@ -2,10 +2,9 @@ from netmiko_2 import parse_interfaces
 from netmiko import ConnectHandler
 import yaml
 import json
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
+
+
 
 with open("devices.yaml","r") as f:
     data = yaml.safe_load(f)

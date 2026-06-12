@@ -6,7 +6,7 @@
       "prefix": "clab",
       "mgmt": {
         "network": "clab",
-        "bridge": "br-7a7730d30e34",
+        "bridge": "br-260b31fee328",
         "ipv4-subnet": "172.20.20.0/24",
         "ipv4-gw": "172.20.20.1",
         "ipv6-subnet": "3fff:172:20:20::/64",
@@ -28,13 +28,13 @@
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-address": "172.20.20.2",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-7a7730d30e34",
+        "clab-mgmt-net-bridge": "br-260b31fee328",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/owner/practice/week3/clab-bgp-lab/router1",
@@ -59,13 +59,13 @@
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-address": "172.20.20.3",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-7a7730d30e34",
+        "clab-mgmt-net-bridge": "br-260b31fee328",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/owner/practice/week3/clab-bgp-lab/router2",
@@ -86,13 +86,13 @@
         "a": {
           "node": "router1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:03:59:6d",
+          "mac": "aa:c1:ab:7c:88:1e",
           "peer": "z"
         },
         "z": {
           "node": "router2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:6c:dc:aa",
+          "mac": "aa:c1:ab:89:cb:98",
           "peer": "a"
         }
       }
