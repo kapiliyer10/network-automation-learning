@@ -1,0 +1,18 @@
+testbed:
+  name: cat8kv-lab
+
+devices:
+  cat8000v:
+    os: iosxe
+    type: router
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.10.20.48
+        port: 22
+        arguments:
+          learn_hostname: False
+    credentials:
+      default:
+        username:
+        password:
